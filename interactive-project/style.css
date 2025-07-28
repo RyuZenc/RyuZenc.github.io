@@ -1,0 +1,242 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body dan Background Pelangi Animasi */
+body {
+  font-family: "Courier New", monospace;
+  min-height: 100vh;
+  background: linear-gradient(
+    270deg,
+    rgb(170, 0, 0),
+    rgb(170, 115, 0),
+    rgb(170, 170, 0),
+    rgb(0, 170, 0),
+    rgb(0, 0, 170),
+    rgb(95, 0, 170),
+    rgb(170, 0, 173)
+  );
+  background-size: 1400% 1400%;
+  animation: rainbow 20s linear infinite;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-x: hidden;
+  user-select: none;
+}
+
+/* Rainbow Background */
+@keyframes rainbow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Sidebar overlay */
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  background: rgba(30, 30, 30, 0.95);
+  padding: 1.5rem 1rem;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.7);
+  transform: translateX(-260px);
+  transition: transform 0.3s ease;
+  z-index: 1100;
+  overflow-y: auto;
+}
+
+#sidebar-toggle:checked ~ #sidebar {
+  transform: translateX(0);
+}
+
+/* Sidebar header */
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+.sidebar-header h3 {
+  margin: 0;
+  font-weight: 700;
+}
+
+.btn-close-sidebar {
+  font-size: 2rem;
+  cursor: pointer;
+  user-select: none;
+  color: #fff;
+  line-height: 1;
+}
+
+/* Sidebar menu */
+.sidebar-menu {
+  list-style: none;
+  padding-left: 0;
+}
+
+.sidebar-menu li {
+  margin-bottom: 1.25rem;
+}
+
+.sidebar-menu a {
+  color: #ddd;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.sidebar-menu a:hover {
+  color: #f5a1b1;
+  text-decoration: underline;
+}
+
+/* Hamburger toggle button */
+#btn-hamburger {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  font-size: 2.5rem;
+  color: white;
+  cursor: pointer;
+  z-index: 1200;
+  user-select: none;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.3rem 0.7rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+#btn-hamburger:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* Hide hamburger when sidebar open */
+#sidebar-toggle:checked ~ #btn-hamburger {
+  display: none;
+}
+
+/* Konten utama tetap full width, tidak bergeser */
+#content-wrapper {
+  padding: 3rem 1rem 2rem;
+  flex: 1;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* Hero dan typing effect */
+.hero {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.typing {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid white;
+  font-size: 2.5rem;
+  animation: typing 4s steps(20) 1s forwards, blink 0.6s step-end infinite;
+  max-width: 20ch;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 20ch;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* 3D Hover Cards */
+.projects {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 0 2rem;
+}
+
+.card {
+  background: white;
+  color: #333;
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+  transform: perspective(600px) rotateX(0deg) rotateY(0deg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+  cursor: default;
+}
+
+.card:hover {
+  transform: perspective(600px) rotateX(5deg) rotateY(10deg);
+  box-shadow: 0 30px 45px rgba(0, 0, 0, 0.4);
+}
+
+/* Button Container */
+.btn-container {
+  margin: 2rem auto 3rem;
+  text-align: center;
+  width: 100%;
+  max-width: 960px;
+}
+
+/* Override Bootstrap btn-primary for smoother hover effect */
+.btn-back {
+  font-weight: bold;
+  padding: 0.8rem 1.8rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  user-select: none;
+}
+
+.btn-back:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+footer {
+  padding: 1rem;
+  text-align: center;
+  color: white;
+  font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  /* Sidebar default hidden (handled by transform) */
+
+  /* Hamburger always visible */
+  #btn-hamburger {
+    display: block;
+  }
+}
