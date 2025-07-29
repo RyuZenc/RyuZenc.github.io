@@ -208,10 +208,9 @@ body {
   max-width: 960px;
 }
 
-/* Override Bootstrap btn-primary for smoother hover effect */
 .btn-back {
   font-weight: bold;
-  padding: 0.8rem 1.8rem;
+  padding: 0.8rem 4.6rem;
   border-radius: 0.8rem;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
