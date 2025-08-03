@@ -1,0 +1,144 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(to right, #f3f4f6, #e5e7eb);
+  color: #333;
+}
+
+header {
+  background-color: #0d6efd;
+  color: white;
+  padding: 1rem 2rem;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  min-height: 80px;
+}
+
+#typing-text {
+  margin: 0;
+  font-size: 2rem;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.profile img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.info h2 {
+  margin: 0;
+  font-size: 2rem;
+  color: #0d6efd;
+}
+
+.info p {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+.skills {
+  margin-top: 2rem;
+}
+
+.skills h3 {
+  color: #0d6efd;
+  margin-bottom: 1rem;
+}
+
+.skill-bar {
+  background: #e0e0e0;
+  border-radius: 50px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  height: 20px;
+  position: relative;
+}
+
+.skill-bar span {
+  display: block;
+  height: 100%;
+  width: 0%;
+  background: #0d6efd;
+  text-align: right;
+  padding-right: 10px;
+  color: white;
+  line-height: 20px;
+  font-size: 0.8rem;
+  border-radius: 50px;
+  transition: width 1.2s ease-in-out;
+}
+
+.socials {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.socials a {
+  margin: 0 10px;
+  font-size: 1.5rem;
+  color: #0d6efd;
+  transition: transform 0.2s;
+}
+
+.socials a:hover {
+  transform: scale(1.2);
+  color: #0056b3;
+}
+
+.back-btn-container {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+.btn-back {
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  background-color: #0d6efd;
+  color: white;
+  border: none;
+  border-radius: 0.6rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-back:hover {
+  background-color: #084dc1;
+  transform: translateY(-3px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

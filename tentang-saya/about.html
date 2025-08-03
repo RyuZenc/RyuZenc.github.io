@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Me</title>
+    <link rel="stylesheet" href="about.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <h1 id="typing-text"></h1>
+    </header>
+
+    <div class="container">
+      <div class="profile">
+        <img src="../asset/zenc.jpg" alt="My Photo" />
+        <div class="info">
+          <h2>Dhxms</h2>
+          <p>
+            Hi! I'm a web developer passionate about building beautiful and
+            functional websites. I enjoy learning new technologies and improving
+            user experiences with clean and modern designs.
+          </p>
+        </div>
+      </div>
+
+      <div class="skills">
+        <h3>My Skills</h3>
+        <div class="skill-bar" data-width="90%"><span>HTML</span></div>
+        <div class="skill-bar" data-width="85%"><span>CSS</span></div>
+        <div class="skill-bar" data-width="75%"><span>JavaScript</span></div>
+        <div class="skill-bar" data-width="70%"><span>Laravel</span></div>
+      </div>
+
+      <div class="socials">
+        <a href="https://github.com/RyuZenc" target="_blank" title="GitHub"
+          ><i class="fab fa-github"></i
+        ></a>
+        <a href="mailto:dhimasadmaja@gmail.com" title="Email"
+          ><i class="fas fa-envelope"></i
+        ></a>
+      </div>
+
+      <div class="back-btn-container">
+        <button
+          onclick="location.href='../interactive-project/index.html'"
+          class="btn-back"
+        >
+          ← Kembali
+        </button>
+      </div>
+    </div>
+
+    <script>
+      const text = "Tentang Saya";
+      let i = 0;
+      function type() {
+        if (i < text.length) {
+          document.getElementById("typing-text").innerHTML += text.charAt(i);
+          i++;
+          setTimeout(type, 100);
+        }
+      }
+      type();
+
+      window.addEventListener("scroll", () => {
+        document.querySelectorAll(".skill-bar").forEach((bar) => {
+          const rect = bar.getBoundingClientRect();
+          if (rect.top < window.innerHeight - 50) {
+            bar.firstElementChild.style.width = bar.dataset.width;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
