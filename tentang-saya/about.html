@@ -67,7 +67,7 @@
       }
       type();
 
-      window.addEventListener("scroll", () => {
+      window.addEventListener("load", () => {
         document.querySelectorAll(".skill-bar").forEach((bar) => {
           const rect = bar.getBoundingClientRect();
           if (rect.top < window.innerHeight - 50) {
